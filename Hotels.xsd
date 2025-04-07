@@ -1,4 +1,4 @@
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://venus.sod.asu.edu/WSRepository/xml" targetNamespace="http://venus.sod.asu.edu/WSRepository/xml" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="https://BraedonBarham.github.io/Hotel.xsd" targetNamespace="https://BraedonBarham.github.io/Hotel.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xsd:annotation>
 		<xsd:documentation xml:lang="en"> Distributed Software Development Course Example </xsd:documentation>
 	</xsd:annotation>
@@ -24,14 +24,10 @@
 			<xsd:element name="State" type="xsd:string" minOccurs="1" />
 			<xsd:element name="Zip" type="xsd:int" minOccurs="1" />
 		</xsd:sequence>
-		<xsd:attribute name="NearestAirport" type="NearestAirportDetails" use="required" />
+		<xsd:attribute name="NearestAirport" type="xsd:string" use="required" />
 	</xsd:complexType>
-	<xsd:complexType name="NearestAirportDetails">
-		<xsd:sequence>
-			<xsd:element name="Name" type="xsd:string" minOccurs="1" maxOccurs="1"/>
-		</xsd:sequence>
-	</xsd:complexType>
-	
+
+
 	<!--  Define the allowed format for the Phone number with a regular exp.  -->
 	<xsd:simpleType name="PhoneType">
 		<xsd:restriction base="xsd:string">
