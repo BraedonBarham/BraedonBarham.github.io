@@ -1,35 +1,43 @@
 ﻿using System;
-using System.Xml;
 using System.Xml.Schema;
-using System.Collections.Generic;
+using System.Xml;
+using Newtonsoft.Json;
 using System.IO;
-using System.Text.Json;
-using System.Xml.Linq;
+
+
+/**
+* This template file is created for ASU CSE445 Distributed SW Dev Assignment 4.
+* Please do not modify or delete any existing class/variable/method names.
+However, you can add more variables and functions.
+* Uploading this file directly will not pass the autograder's compilation check,
+resulting in a grade of 0.
+* **/
 
 
 namespace ConsoleApp1
 {
-    class Program
+    public class Program
     {
 
-        public static string xmlUrl = "https://braedonbarham.github.io/Hotels.xml";
-        public static string xmlErrorUrl = "https://braedonbarham.github.io/HotelsErrors.xml";
-        public static string xsdUrl = "https://braedonbarham.github.io/Hotels.xsd";
+        public static string xmlURL = "https://braedonbarham.github.io/Hotels.xml";
+        public static string xmlErrorURL = "https://braedonbarham.github.io/HotelsErrors.xml";
+        public static string xsdURL = "https://braedonbarham.github.io/Hotels.xsd";
 
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            string result = Verification(xmlUrl, xsdUrl);
+            string result = Verification(xmlURL, xsdURL);
             Console.WriteLine(result);
 
-            result = Verification(xmlErrorUrl, xsdUrl);
+
+            result = Verification(xmlErrorURL, xsdURL);
             Console.WriteLine(result);
 
-            result = Xml2Json(xmlUrl);
-            Console.WriteLine(result);
 
-            Console.ReadKey();
+            result = Xml2Json(xmlURL);
+            Console.WriteLine(result);
         }
 
+        // Q2.1
         public static string Verification(string xmlUrl, string xsdUrl)
         {
             try
@@ -77,9 +85,11 @@ namespace ConsoleApp1
         public static string Xml2Json(string xmlUrl)
         {
 
-            XDocument doc = XDocument.Load(xmlUrl);
+            XmlDocument doc = new XmlDocument();
+            doc.Load(xmlUrl);
+            XmlNamespaceManager nameSpace = new XmlNamespaceManager(doc.NameTable);
+            nameSpace.AddNamespace("ns", "https://BraedonBarham.github.io/Hotels.xsd");
 
-            XNamespace xsdUrl = doc.Root.Name.Namespace;
             //This probably wasn't the intended way to go about this, but I
             // used this "xsdUrl" to be able to select certain parts.
 
@@ -92,25 +102,26 @@ namespace ConsoleApp1
             // The nearstairport is as well.
             // The rating requires the existence check because it's an optional parameter.
 
-
+            XmlNodeList hotelNodes = doc.SelectNodes("//ns:Hotel", nameSpace);
             var Hotels = new List<Dictionary<string, object>>();
-            foreach (var hotel in doc.Root.Elements(xsdUrl + "Hotel"))
+            foreach (XmlNode hotel in hotelNodes)
                 {
                 var bigHotel = new Dictionary<string, object>();
 
                 // Do the name
-                var name = hotel.Element(xsdUrl + "Name");
+                var name = hotel.SelectSingleNode("ns:Name", nameSpace);
 
           
-                    bigHotel["Name"] = name.Value;
+                    bigHotel["Name"] = name.InnerText;
                     
                 // Next the Phone(s)
 
                 var phoneList = new List<string>();
+                XmlNodeList phoneNodes = hotel.SelectNodes("ns:Phone", nameSpace);
 
-                foreach(var phone in hotel.Elements(xsdUrl + "Phone"))
+                foreach (XmlNode phone in phoneNodes)
                 {
-                    phoneList.Add(phone.Value);
+                    phoneList.Add(phone.InnerText);
                 }
                
                     bigHotel["Phone"] = phoneList;
@@ -118,22 +129,22 @@ namespace ConsoleApp1
 
                 // The Address.s...
 
-                var address = hotel.Element(xsdUrl + "Address");
+                var address = hotel.SelectSingleNode("ns:Address", nameSpace);
                 //Console.WriteLine(phoneList[0]);
                 // Even though Number and Zip are integers, they will be parsed as strings.
                 var addressDict = new Dictionary<string, string>();
 
                 foreach (var bigGroup in new[] {"Number", "Street", "City", "State", "Zip" })
                 {
-                    var element = address.Element(xsdUrl + bigGroup);
+                    var element = address.SelectSingleNode("ns:" + bigGroup, nameSpace);
                     
-                        addressDict[bigGroup] = element.Value;
+                        addressDict[bigGroup] = element.InnerText;
                     
                 }
 
                 // Aeroporte
 
-                var Aeroporte = address.Attribute("_NearstAirport");
+                var Aeroporte = address.Attributes["_NearstAirport"];
                 if (Aeroporte != null)
                 {
                     addressDict["_NearstAirport"] = Aeroporte.Value;
@@ -143,7 +154,7 @@ namespace ConsoleApp1
 
                 // Now rating
 
-                var rating = hotel.Attribute("_Rating");
+                var rating = hotel.Attributes["_Rating"];
                 if (rating != null)
                 {
                     bigHotel["_Rating"] = rating.Value;
@@ -161,11 +172,8 @@ namespace ConsoleApp1
             //and serialze
             // here, stack overflow helped out
             // this takes my object and makes it into a pretty JSON string and not a one liner
-            var serialize = new JsonSerializerOptions
-            {
-                WriteIndented = true
-            };
-            return JsonSerializer.Serialize(rootHotels, serialize);
+            var jsonText = JsonConvert.SerializeObject(rootHotels, Newtonsoft.Json.Formatting.Indented);
+            return jsonText;
 
 
 

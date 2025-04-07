@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Lp024Ek+sf8FuWZfiOZLO+f19ovng5sZFHd2xAkqwmhLJDqt6yClFiBIHuBzB2eNAzVjrSCdEqHhOwKTJKNeaw==",
+  "dgSpecHash": "AXpidIWLHeTYDayJNtoqHk9vIJ20HJ6glhQ9npr546jc55zlpiLMazI6De1NjH6SoF6n4ypjsWcpBnYGb1ofQw==",
   "success": true,
   "projectFilePath": "C:\\Users\\erinb\\Desktop\\BraedonBarham\\BraedonBarham.github.io\\HotelValidator\\HotelValidator.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\erinb\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -1,5 +1,5 @@
 ﻿<Hotels xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://BraedonBarham.github.io/Hotels.xsd" xsi:schemaLocation="https://BraedonBarham.github.io/Hotels.xsd https://BraedonBarham.github.io/Hotels.xsd">
-	<Hotel Rating="4.2">
+	<Hotel _Rating="4.2">
 		<Name>Westin</Name>
 		<Phone>480-968-8885</Phone>
 		<Phone>800-937-8461</Phone>

@@ -13,3 +13,5 @@ C:\Users\erinb\Desktop\BraedonBarham\BraedonBarham.github.io\HotelValidator\obj\
 C:\Users\erinb\Desktop\BraedonBarham\BraedonBarham.github.io\HotelValidator\obj\Debug\net7.0\HotelValidator.pdb
 C:\Users\erinb\Desktop\BraedonBarham\BraedonBarham.github.io\HotelValidator\obj\Debug\net7.0\HotelValidator.genruntimeconfig.cache
 C:\Users\erinb\Desktop\BraedonBarham\BraedonBarham.github.io\HotelValidator\obj\Debug\net7.0\ref\HotelValidator.dll
+C:\Users\erinb\Desktop\BraedonBarham\BraedonBarham.github.io\HotelValidator\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\erinb\Desktop\BraedonBarham\BraedonBarham.github.io\HotelValidator\obj\Debug\net7.0\HotelValidator.csproj.CopyComplete
