@@ -1,4 +1,4 @@
-﻿<Hotels xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://BraedonBarham.github.io/Hotel.xsd" xsi:schemaLocation="https://BraedonBarham.github.io/Hotel.xsd https://BraedonBarham.github.io/Hotel.xsd">>
+﻿<Hotels xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://BraedonBarham.github.io/Hotel.xsd" xsi:schemaLocation="https://BraedonBarham.github.io/Hotel.xsd https://BraedonBarham.github.io/Hotel.xsd">
 
 	<Hotel Rating="4.2">
 		<Name>Westin</Name>
