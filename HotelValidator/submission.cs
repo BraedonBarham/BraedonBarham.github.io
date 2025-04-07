@@ -1,10 +1,8 @@
-﻿using System;
+using System;
 using System.Xml.Schema;
 using System.Xml;
 using Newtonsoft.Json;
 using System.IO;
-
-
 /**
 * This template file is created for ASU CSE445 Distributed SW Dev Assignment 4.
 * Please do not modify or delete any existing class/variable/method names.
@@ -12,34 +10,27 @@ However, you can add more variables and functions.
 * Uploading this file directly will not pass the autograder's compilation check,
 resulting in a grade of 0.
 * **/
-
-
 namespace ConsoleApp1
 {
     public class Program
     {
-
         public static string xmlURL = "https://braedonbarham.github.io/Hotels.xml";
         public static string xmlErrorURL = "https://braedonbarham.github.io/HotelsErrors.xml";
         public static string xsdURL = "https://braedonbarham.github.io/Hotels.xsd";
-
         public static void Main(string[] args)
         {
             string result = Verification(xmlURL, xsdURL);
             Console.WriteLine(result);
-
-
             result = Verification(xmlErrorURL, xsdURL);
             Console.WriteLine(result);
-
-
             result = Xml2Json(xmlURL);
             Console.WriteLine(result);
+            //Console.ReadKey();
         }
-
         // Q2.1
         public static string Verification(string xmlUrl, string xsdUrl)
         {
+            //return "No Error" if XML is valid. Otherwise, return the desired
             try
             {
                 //View Slide 5, XML Validation PDF for reference
@@ -62,7 +53,7 @@ namespace ConsoleApp1
 
                 settings.ValidationEventHandler += (sender, e) =>
                 {
-                    errors.Add($"Validation Error: {e.Message}");
+                    errors.Add(e.Message);
                 };
 
                 using (XmlReader reader = XmlReader.Create(xmlUrl, settings))
@@ -79,12 +70,11 @@ namespace ConsoleApp1
             }
             catch (Exception ex)
             {
-                return $"Exception: {ex.Message}";
+                return ex.Message;
             }
         }
         public static string Xml2Json(string xmlUrl)
         {
-
             XmlDocument doc = new XmlDocument();
             doc.Load(xmlUrl);
             XmlNamespaceManager nameSpace = new XmlNamespaceManager(doc.NameTable);
@@ -105,15 +95,15 @@ namespace ConsoleApp1
             XmlNodeList hotelNodes = doc.SelectNodes("//ns:Hotel", nameSpace);
             var Hotels = new List<Dictionary<string, object>>();
             foreach (XmlNode hotel in hotelNodes)
-                {
+            {
                 var bigHotel = new Dictionary<string, object>();
 
                 // Do the name
                 var name = hotel.SelectSingleNode("ns:Name", nameSpace);
 
-          
-                    bigHotel["Name"] = name.InnerText;
-                    
+
+                bigHotel["Name"] = name.InnerText;
+
                 // Next the Phone(s)
 
                 var phoneList = new List<string>();
@@ -123,9 +113,9 @@ namespace ConsoleApp1
                 {
                     phoneList.Add(phone.InnerText);
                 }
-               
-                    bigHotel["Phone"] = phoneList;
-                
+
+                bigHotel["Phone"] = phoneList;
+
 
                 // The Address.s...
 
@@ -134,12 +124,12 @@ namespace ConsoleApp1
                 // Even though Number and Zip are integers, they will be parsed as strings.
                 var addressDict = new Dictionary<string, string>();
 
-                foreach (var bigGroup in new[] {"Number", "Street", "City", "State", "Zip" })
+                foreach (var bigGroup in new[] { "Number", "Street", "City", "State", "Zip" })
                 {
                     var element = address.SelectSingleNode("ns:" + bigGroup, nameSpace);
-                    
-                        addressDict[bigGroup] = element.InnerText;
-                    
+
+                    addressDict[bigGroup] = element.InnerText;
+
                 }
 
                 // Aeroporte
@@ -147,7 +137,7 @@ namespace ConsoleApp1
                 var Aeroporte = address.Attributes["_NearstAirport"];
                 if (Aeroporte != null)
                 {
-                    addressDict["_NearstAirport"] = Aeroporte.Value;
+                    addressDict["_NearestAirport"] = Aeroporte.Value;
                 }
 
                 bigHotel["Address"] = addressDict;
@@ -170,13 +160,10 @@ namespace ConsoleApp1
             };
 
             //and serialze
-            // here, stack overflow helped out
+  
             // this takes my object and makes it into a pretty JSON string and not a one liner
             var jsonText = JsonConvert.SerializeObject(rootHotels, Newtonsoft.Json.Formatting.Indented);
             return jsonText;
-
-
-
         }
     }
 }
