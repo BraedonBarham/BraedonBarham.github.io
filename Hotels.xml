@@ -65,9 +65,6 @@
 			<City>Phoenix</City>
 			<State>AZ</State>
 			<Zip>85016</Zip>
-			<NearestAirport>
-				<Name>Phoenix Sky Harbor</Name>
-			</NearestAirport>
 		</Address>
 	</Hotel>
 	<Hotel>
