@@ -1,0 +1,15 @@
+C:\Users\erinb\Desktop\BraedonBarham\BraedonBarham.github.io\HotelValidator\bin\Debug\net7.0\HotelValidator.exe
+C:\Users\erinb\Desktop\BraedonBarham\BraedonBarham.github.io\HotelValidator\bin\Debug\net7.0\HotelValidator.deps.json
+C:\Users\erinb\Desktop\BraedonBarham\BraedonBarham.github.io\HotelValidator\bin\Debug\net7.0\HotelValidator.runtimeconfig.json
+C:\Users\erinb\Desktop\BraedonBarham\BraedonBarham.github.io\HotelValidator\bin\Debug\net7.0\HotelValidator.dll
+C:\Users\erinb\Desktop\BraedonBarham\BraedonBarham.github.io\HotelValidator\bin\Debug\net7.0\HotelValidator.pdb
+C:\Users\erinb\Desktop\BraedonBarham\BraedonBarham.github.io\HotelValidator\obj\Debug\net7.0\HotelValidator.csproj.AssemblyReference.cache
+C:\Users\erinb\Desktop\BraedonBarham\BraedonBarham.github.io\HotelValidator\obj\Debug\net7.0\HotelValidator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\erinb\Desktop\BraedonBarham\BraedonBarham.github.io\HotelValidator\obj\Debug\net7.0\HotelValidator.AssemblyInfoInputs.cache
+C:\Users\erinb\Desktop\BraedonBarham\BraedonBarham.github.io\HotelValidator\obj\Debug\net7.0\HotelValidator.AssemblyInfo.cs
+C:\Users\erinb\Desktop\BraedonBarham\BraedonBarham.github.io\HotelValidator\obj\Debug\net7.0\HotelValidator.csproj.CoreCompileInputs.cache
+C:\Users\erinb\Desktop\BraedonBarham\BraedonBarham.github.io\HotelValidator\obj\Debug\net7.0\HotelValidator.dll
+C:\Users\erinb\Desktop\BraedonBarham\BraedonBarham.github.io\HotelValidator\obj\Debug\net7.0\refint\HotelValidator.dll
+C:\Users\erinb\Desktop\BraedonBarham\BraedonBarham.github.io\HotelValidator\obj\Debug\net7.0\HotelValidator.pdb
+C:\Users\erinb\Desktop\BraedonBarham\BraedonBarham.github.io\HotelValidator\obj\Debug\net7.0\HotelValidator.genruntimeconfig.cache
+C:\Users\erinb\Desktop\BraedonBarham\BraedonBarham.github.io\HotelValidator\obj\Debug\net7.0\ref\HotelValidator.dll
