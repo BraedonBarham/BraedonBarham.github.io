@@ -85,7 +85,7 @@ namespace ConsoleApp1
 
                 if (name != null)
                     {
-                    bigHotel["Name"] = name;
+                    bigHotel["Name"] = name.Value;
                     }
                 // Next the Phone(s)
 
@@ -103,13 +103,13 @@ namespace ConsoleApp1
                 // The Address.s...
 
                 var address = hotel.Element(xsdUrl + "Address");
-
+                //Console.WriteLine(phoneList[0]);
                 // Even though Number and Zip are integers, they will be parsed as strings.
                 var addressDict = new Dictionary<string, string>();
 
                 foreach (var bigGroup in new[] {"Number", "Street", "City", "State", "Zip" })
                 {
-                    var element = address.Element(xmlUrl + bigGroup);
+                    var element = address.Element(xsdUrl + bigGroup);
                     if (element != null)
                     {
                         addressDict[bigGroup] = element.Value;
@@ -121,7 +121,7 @@ namespace ConsoleApp1
                 var Aeroporte = address.Attribute("NearstAirport");
                 if (Aeroporte != null)
                 {
-                    addressDict["NearstAirport"] = Aeroporte.Value;
+                    addressDict["_NearstAirport"] = Aeroporte.Value;
                 }
 
                 bigHotel["Address"] = addressDict;
@@ -131,7 +131,7 @@ namespace ConsoleApp1
                 var rating = hotel.Attribute("Rating");
                 if (rating != null)
                 {
-                    bigHotel["Rating"] = rating.Value;
+                    bigHotel["_Rating"] = rating.Value;
                 }
 
                 Hotels.Add(bigHotel);
