@@ -3,7 +3,7 @@
 		<Name>Westin</Name>
 		<Phone>480-968-8885</Phone>
 		<Phone>800-937-8461</Phone>
-		<Address NearestAirport="Phoenix Sky Harbor">
+		<Address NearstAirport="Phoenix Sky Harbor">
 			<Number>11</Number>
 			<Street>E.7th St</Street>
 			<City>Tempe</City>
@@ -14,7 +14,7 @@
 	<Hotel Rating="4.5">
 		<Name>Omni Hotels at ASU, Tempe</Name>
 		<Phone>602-794-8600</Phone>
-		<Address NearestAirport="Phoenix Sky Harbor">
+		<Address NearstAirport="Phoenix Sky Harbor">
 			<Number>7</Number>
 			<Street>E University Dr</Street>
 			<City>Tempe</City>
@@ -25,7 +25,7 @@
 	<Hotel>
 		<Name>DoubleTree by Hilton Hotel</Name>
 		<Phone>480-967-1441</Phone>
-		<Address NearestAirport="Phoenix Sky Harbor">
+		<Address NearstAirport="Phoenix Sky Harbor">
 			<Number>2100</Number>
 			<Street>S Priest Dr</Street>
 			<City>Tempe</City>
@@ -36,7 +36,7 @@
 	<Hotel Rating="4.5">
 		<Name>Hyatt Place Tempe</Name>
 		<Phone>480-207-1578</Phone>
-		<Address NearestAirport="Phoenix Sky Harbor">
+		<Address NearstAirport="Phoenix Sky Harbor">
 			<Number>601</Number>
 			<Street>E 6th St</Street>
 			<City>Tempe</City>
@@ -47,7 +47,7 @@
 	<Hotel>
 		<Name>The Phoenician</Name>
 		<Phone>480-941-8200</Phone>
-		<Address NearestAirport="Phoenix Sky Harbor">
+		<Address NearstAirport="Phoenix Sky Harbor">
 			<Number>6000 </Number>
 			<Street>E Camelback Rd</Street>
 			<City>Scottsdale</City>
@@ -59,7 +59,7 @@
 		<Name>Arizona Biltmore</Name>
 		<Phone>602-955-6600</Phone>
 		<Phone>602-955-6601</Phone>
-		<Address NearestAirport="Phoenix Sky Harbor">
+		<Address NearstAirport="Phoenix Sky Harbor">
 			<Number>2400 </Number>
 			<Street>E Missouri Ave</Street>
 			<City>Phoenix</City>
@@ -70,7 +70,7 @@
 	<Hotel>
 		<Name>Renaissance Phoenix Downtown Hotel</Name>
 		<Phone>602-333-0000</Phone>
-		<Address NearestAirport="Phoenix Sky Harbor">
+		<Address NearstAirport="Phoenix Sky Harbor">
 			<Number>100</Number>
 			<Street>N 1st St</Street>
 			<City>Phoenix</City>
@@ -81,7 +81,7 @@
 	<Hotel Rating="4.6">
 		<Name>Omni Scottsdale Resort &amp; Spa at Montelucia</Name>
 		<Phone>480-627-3200</Phone>
-		<Address NearestAirport="Phoenix Sky Harbor">
+		<Address NearstAirport="Phoenix Sky Harbor">
 			<Number>4949</Number>
 			<Street>E Lincoln Dr</Street>
 			<City>Scottsdale</City>
@@ -93,7 +93,7 @@
 		<Name>Encore Las Vegas</Name>
 		<Phone>702-770-7000</Phone>
 		<Phone>702-770-7010</Phone>
-		<Address NearestAirport="Las Vegas Airport">
+		<Address NearstAirport="Las Vegas Airport">
 			<Number>3121</Number>
 			<Street>S Las Vegas Blvd</Street>
 			<City>Las Vegas</City>
@@ -104,7 +104,7 @@
 	<Hotel>
 		<Name>Omni Tucson National Resort &amp; Spa</Name>
 		<Phone>520-297-2271</Phone>
-		<Address NearestAirport="Tucson International Airport">
+		<Address NearstAirport="Tucson International Airport">
 			<Number>2727</Number>
 			<Street>W Club Dr</Street>
 			<City>Tucson</City>

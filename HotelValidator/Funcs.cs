@@ -10,7 +10,7 @@ public class XmlUtilities
     {
         try
         {
-            string errorMessage = "No Error";
+            List<string> errors = new List<string>();
 
             XmlSchemaSet sc = new XmlSchemaSet();
             // Obviously, we compare to this scheme we wrote
@@ -23,17 +23,20 @@ public class XmlUtilities
             //object sender, ValidationEventArgs e
             settings.ValidationEventHandler += (sender, e) =>
             {
-                errorMessage = $"Validation Error: {e.Message}";
+                errors.Add($"Validation Error: {e.Message}");
             };
 
             //We read the 10 hotels.
-            XmlReader reader = new XmlReader.Create(xmlUrl);
-            while (reader.Read())
+            using (XmlReader reader = XmlReader.Create(xmlUrl, settings))
             {
-
+                while (reader.Read()) { }  
             }
 
-            return errorMessage;
+            if (errors.Count == 0)
+            {
+                return "No errors are found.";
+            }
+            return string.Join(Environment.NewLine, errors);
         }
         catch (Exception ex)
         {
