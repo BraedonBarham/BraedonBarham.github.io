@@ -11,25 +11,24 @@ public class XmlUtilities
         {
             string errorMessage = "No Error";
 
-            // Set up settings for validation
+ 
             XmlReaderSettings settings = new XmlReaderSettings();
             settings.ValidationType = ValidationType.Schema;
 
-            // Load the XSD from URL
             XmlSchemaSet schemas = new XmlSchemaSet();
             schemas.Add(null, xsdUrl);
             settings.Schemas = schemas;
 
-            // Set the validation event handler
+
             settings.ValidationEventHandler += (sender, args) =>
             {
                 errorMessage = $"Validation Error: {args.Message}";
             };
 
-            // Create XmlReader using the settings and load from XML URL
+   
             using (XmlReader reader = XmlReader.Create(xmlUrl, settings))
             {
-                while (reader.Read()) { }  // Parse the document
+                while (reader.Read()) { } 
             }
 
             return errorMessage;
