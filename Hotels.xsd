@@ -1,4 +1,4 @@
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="https://BraedonBarham.github.io/Hotel.xsd" targetNamespace="https://BraedonBarham.github.io/Hotel.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="https://BraedonBarham.github.io/Hotels.xsd" targetNamespace="https://BraedonBarham.github.io/Hotels.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xsd:annotation>
 		<xsd:documentation xml:lang="en"> Distributed Software Development Course Example </xsd:documentation>
 	</xsd:annotation>

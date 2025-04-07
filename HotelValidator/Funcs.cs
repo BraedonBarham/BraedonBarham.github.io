@@ -5,30 +5,32 @@ using System.Xml.Schema;
 
 public class XmlUtilities
 {
+    //View Slide 5, XML Validation PDF for reference
     public static string Verification(string xmlUrl, string xsdUrl)
     {
         try
         {
             string errorMessage = "No Error";
 
- 
+            XmlSchemaSet sc = new XmlSchemaSet();
+            // Obviously, we compare to this scheme we wrote
+            sc.Add(null, xsdUrl);
+            
             XmlReaderSettings settings = new XmlReaderSettings();
             settings.ValidationType = ValidationType.Schema;
+            settings.Schemas = sc;
 
-            XmlSchemaSet schemas = new XmlSchemaSet();
-            schemas.Add(null, xsdUrl);
-            settings.Schemas = schemas;
-
-
-            settings.ValidationEventHandler += (sender, args) =>
+            //object sender, ValidationEventArgs e
+            settings.ValidationEventHandler += (sender, e) =>
             {
-                errorMessage = $"Validation Error: {args.Message}";
+                errorMessage = $"Validation Error: {e.Message}";
             };
 
-   
-            using (XmlReader reader = XmlReader.Create(xmlUrl, settings))
+            //We read the 10 hotels.
+            XmlReader reader = new XmlReader.Create(xmlUrl);
+            while (reader.Read())
             {
-                while (reader.Read()) { } 
+
             }
 
             return errorMessage;
