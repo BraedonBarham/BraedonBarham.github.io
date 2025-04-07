@@ -34,6 +34,13 @@ namespace ConsoleApp1
         {
             try
             {
+                //View Slide 5, XML Validation PDF for reference
+                // Essentially, all of this is in there
+                // Any how, we create a scheme object that we're essentially comparing to while we
+                // Read out xml document. Any errors get logged, and if it successfully reads through
+                // as a result of a correct scheme, it returns No Error
+
+
                 List<string> errors = new List<string>();
 
                 XmlSchemaSet schemas = new XmlSchemaSet();
@@ -73,6 +80,17 @@ namespace ConsoleApp1
             XDocument doc = XDocument.Load(xmlUrl);
 
             XNamespace xsdUrl = doc.Root.Name.Namespace;
+            //This probably wasn't the intended way to go about this, but I
+            // used this "xsdUrl" to be able to select certain parts.
+
+            // Very simply, I'm creating either a dictionary or a list for each part of the Hotel.
+            // Hotels is a dictionary because that's our enveloping hotels object.
+            // hotel is also a dictionary because each hotel has a few objects it must hold, such as
+            // address, phones, nearest airport and the like.
+            // the phones get a list because there can be multiple phone strings.
+            // the addresses are pretty cut and dry.
+            // The nearstairport is as well.
+            // The rating requires the existence check because it's an optional parameter.
 
 
             var Hotels = new List<Dictionary<string, object>>();
@@ -83,10 +101,9 @@ namespace ConsoleApp1
                 // Do the name
                 var name = hotel.Element(xsdUrl + "Name");
 
-                if (name != null)
-                    {
+          
                     bigHotel["Name"] = name.Value;
-                    }
+                    
                 // Next the Phone(s)
 
                 var phoneList = new List<string>();
@@ -95,10 +112,9 @@ namespace ConsoleApp1
                 {
                     phoneList.Add(phone.Value);
                 }
-                if (phoneList.Count > 0)
-                {
+               
                     bigHotel["Phone"] = phoneList;
-                }
+                
 
                 // The Address.s...
 
@@ -110,15 +126,14 @@ namespace ConsoleApp1
                 foreach (var bigGroup in new[] {"Number", "Street", "City", "State", "Zip" })
                 {
                     var element = address.Element(xsdUrl + bigGroup);
-                    if (element != null)
-                    {
+                    
                         addressDict[bigGroup] = element.Value;
-                    }
+                    
                 }
 
                 // Aeroporte
 
-                var Aeroporte = address.Attribute("NearstAirport");
+                var Aeroporte = address.Attribute("_NearstAirport");
                 if (Aeroporte != null)
                 {
                     addressDict["_NearstAirport"] = Aeroporte.Value;
@@ -128,7 +143,7 @@ namespace ConsoleApp1
 
                 // Now rating
 
-                var rating = hotel.Attribute("Rating");
+                var rating = hotel.Attribute("_Rating");
                 if (rating != null)
                 {
                     bigHotel["_Rating"] = rating.Value;
@@ -144,7 +159,8 @@ namespace ConsoleApp1
             };
 
             //and serialze
-
+            // here, stack overflow helped out
+            // this takes my object and makes it into a pretty JSON string and not a one liner
             var serialize = new JsonSerializerOptions
             {
                 WriteIndented = true
