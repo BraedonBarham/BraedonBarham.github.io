@@ -1,0 +1,116 @@
+﻿<Hotel>
+	<Hotel Rating="4.2">
+		<Name>Westin</Name>
+		<Phone>480-968-8885</Phone>
+		<Phone>800-937-8461</Phone>
+		<Address NearestAirport="Phoenix Sky Harbor">
+			<Number>11</Number>
+			<Street>E.7th St</Street>
+			<City>Tempe</City>
+			<State>AZ</State>
+			<Zip>85281</Zip>
+		</Address>
+	</Hotel>
+	<Hotel Rating="4.5">
+		<Name>Omni Hotels at ASU, Tempe</Name>
+		<Phone>602-794-8600</Phone>
+		<Address>
+			<Number>7</Number>
+			<Street>E University Dr</Street>
+			<City>Tempe</City>
+			<State>AZ</State>
+			<Zip>85281</Zip>
+		</Address>
+	</Hotel>
+	<Hotel>
+		<Name>DoubleTree by Hilton Hotel</Name>
+		<Address NearestAirport="Phoenix Sky Harbor">
+			<Number>2100</Number>
+			<Street>S Priest Dr</Street>
+			<City>Tempe</City>
+			<State>AZ</State>
+			<Zip>85282</Zip>
+		</Address>
+	</Hotel>
+	<Hotel Rating="4.5">
+		<Name>Hyatt Place Tempe</Name>
+		<Phone>480-207-1578</Phone>
+		<Address NearestAirport="Phoenix Sky Harbor">
+			<Number>601</Number>
+			<Street>E 6th St</Street>
+			<City>Tempe</City>
+			<State>AZ</State>
+			<Zip>85281</Zip>
+		</Address>
+	</Hotel>
+	<Hotel>
+		<Name>The Phoenician</Name>
+		<Phone>480-941-8200</Phone>
+		<Address NearestAirport="Phoenix Sky Harbor">
+			<Number>6000 </Number>
+			<Street>E Camelback Rd</Street>
+			<City>Scottsdale</City>
+			<State>AZ</State>
+			<Zip>85251</Zip>
+	</Hotel>
+	<Hotel Rating="4.6">
+		<Name>Arizona Biltmore</Name>
+		<Phone>602-955-6600</Phone>
+		<Phone>602-955-6601</Phone>
+		<Address NearestAirport="Phoenix Sky Harbor">
+			<Number>2400 </Number>
+			<Street>E Missouri Ave</Street>
+			<City>Phoenix</City>
+			<State>AZ</State>
+			<Zip>85016</Zip>
+			<NearestAirport>
+				<Name>Phoenix Sky Harbor</Name>
+			</NearestAirport>
+		</Address>
+	</Hotel>
+	<Hotel>
+		<Name>Renaissance Phoenix Downtown Hotel</Name>
+		<Phone>602-333-0000</Phone>
+		<Address NearestAirport="Phoenix Sky Harbor">
+			<Number>100</Number>
+			<Street>N 1st St</Street>
+			<City>Phoenix</City>
+			<State>AZ</State>
+			<Zip>85004</Zip>
+		</Address>
+	</Hotel>
+	<Hotel Rating="4.6">
+		<Name>Omni Scottsdale Resort &amp; Spa at Montelucia</Name>
+		<Phone>480-627-3200</Phone>
+		<Address NearestAirport="Phoenix Sky Harbor">
+			<Number>4949</Number>
+			<Street>E Lincoln Dr</Street>
+			<City>Scottsdale</City>
+			<State>AZ</State>
+			<Zip>85253</Zip>
+		</Address>
+	</Hotel>
+	<Hotel Rating="4.6">
+		<Name>Hyatt Place Tempe</Name>
+		<Phone>702-770-7000</Phone>
+		<Phone>702-770-7010</Phone>
+		<Address NearestAirport="Las Vegas Airport">
+			<Number>3121</Number>
+			<Street>S Las Vegas Blvd</Street>
+			<City>Las Vegas</City>
+			<State>NV</State>
+			<Zip>89109</Zip>
+		</Address>
+	</Hotel>
+	<Hotel>
+		<Name>Omni Tucson National Resort &amp; Spa</Name>
+		<Phone>520-297-2271</Phone>
+		<Address NearestAirport="Tucson International Airport">
+			<Number>2727</Number>
+			<Street>W Club Dr</Street>
+			<City>Tucson</City>
+			<State>AZ</State>
+			<Zip>85742</Zip>
+		</Address>
+	</Hotel>
+</Hotel>
